@@ -20,22 +20,8 @@ class Line(object):
 		pygame.draw.line(screen, (0x00, 0x00, 0x00), (self.ax, self.ay), (self.bx, self.by), width)
 
 	@staticmethod
-	def get_aabb_lines(aabb):
-		"""
-		Returns the lines that constitute the sides of an AABB
-		The AABB may be:
-			> An object with the attributes: x, y, width and height	
-			> A list of the form [x, y, width, height]
-			> A tuple of the form (x, y, width, height)
-		"""
-
-		if isinstance(aabb, tuple) or isinstance(aabb, list):
-			x, y, width, height = aabb
-		else:
-			x = aabb.x
-			y = aabb.x
-			width = aabb.width
-			height = aabb.height
+	def get_aabb_lines(x, y, width, height):
+		"""Returns the lines that constitute the sides of an AABB"""
 
 		return [
 			Line(x, y, x + width, y),

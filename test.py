@@ -10,11 +10,7 @@ pygame.init()
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Raycasting AI")
 
-lines = [
-	Line(0, 0, 800, 0),
-	Line(800, 0, 800, 600),
-	Line(800, 600, 0, 600),
-	Line(0, 600, 0, 0),
+lines = Line.get_aabb_lines(0, 0, 800, 600) + [
 	Line(200, 300, 300, 200),
 ]
 
